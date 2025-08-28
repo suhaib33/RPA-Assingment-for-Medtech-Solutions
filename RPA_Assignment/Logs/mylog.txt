@@ -1,0 +1,7 @@
+Exception: Object cannot be cast to DBNull.
+Source: UiPath.System.Activities
+StackTrace:    at UiPath.Core.Activities.ForEachBase`1.OnExecutionFaulted(NativeActivityFaultContext faultContext, Exception propagatedException, ActivityInstance propagatedFrom)
+   at System.Activities.Runtime.FaultCallbackWrapper.FaultWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+--- End of stack trace from previous location ---
+   at UiPath.UIAutomationNext.Activities.NApplicationCard.OnFault(NativeActivityFaultContext faultContext, Exception propagatedException, ActivityInstance propagatedFrom)
+   at System.Activities.Runtime.FaultCallbackWrapper.FaultWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)

@@ -1,0 +1,343 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="webscrapper" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>webscrapper_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="webscrapper" sap:VirtualizedContainerService.HintSize="1061,3317" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="index">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ForEachRow_1</x:String>
+            <x:String x:Key="SourcePropertyName">CurrentIndex</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="666,280" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,169" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;WebScrapper received BaseUrl = &quot; + in_config(&quot;BaseUrl&quot;).ToString]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="666,3014" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="624,2814" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="590,2754" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="588,2281" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Allinone  Web Scraper Test Sites(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,2221" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="7bfa7465-a9cf-4a8a-baba-4c2aeca5aecd" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,1980" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+                            <Variable x:TypeArguments="x:String" Name="dum" />
+                            <Variable x:TypeArguments="sd:DataTable" Name="FulldataTable" />
+                            <Variable x:TypeArguments="x:String" Name="ExtractedOutputdata" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Computers'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,227" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7bfa7465-a9cf-4a8a-baba-4c2aeca5aecd" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="webscraper.io/test-sites/e-commerce/allinone" CVScreenId="bcb939eb-33ac-4a91-b99e-809cb533dbd9" ContentHash="Z3gh-V2-BE6BLwRzfJsScA" CvElementArea="425, 446, 18, 19" CvTextArea="167, 450, 81, 16" CvTextArgument="Computers" CvType="ArrowButton" DesignTimeRectangle="153, 439, 306, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-label='Navigation category' tag='A' /&gt;" Guid="aa7dca1d-7c73-4cdf-bd85-15b882179c63" InformativeScreenshot="19f609fdde437b1ed45ebc45eace88b1.png" Reference="vsGK_J15Wke1ii7y-mRSiw/hr1c52LeoEWSBVBguXhSDg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Allinone | Web Scraper Test Sites' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="bcb939eb-33ac-4a91-b99e-809cb533dbd9" CvTextArea="167, 450, 81, 16" CvTextArgument="Computers" CvType="Text" DesignTimeRectangle="169, 448, 78, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Computers' parentid='side-menu' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Computers' /&gt;" Guid="30bdebc8-bb2b-46d0-bc4d-76d8dd39abe6" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Laptops'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,227" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7bfa7465-a9cf-4a8a-baba-4c2aeca5aecd" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="webscraper.io/test-sites/e-commerce/allinone/computers" CVScreenId="0825a996-8c4d-4c7c-b8fe-408471506ff6" ContentHash="UEgBa3jgW0uJTxvujiILxw" CvTextArea="189, 490, 58, 16" CvTextArgument="Laptops" CvType="Text" DesignTimeRectangle="153, 479, 306, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-label='Navigation subcategory' tag='A' /&gt;" Guid="ff44fa5d-f310-4eaf-a334-a1dbe54d5217" InformativeScreenshot="eebb69a928df6213e613cc94dbfaadad.png" Reference="vsGK_J15Wke1ii7y-mRSiw/fJSku_m9aU-2vjpmDRkbQw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Allinone | Web Scraper Test Sites' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="0825a996-8c4d-4c7c-b8fe-408471506ff6" CvTextArea="189, 490, 58, 16" CvTextArgument="Laptops" CvType="Text" DesignTimeRectangle="190, 488, 56, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Laptops' parentid='side-menu' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Laptops' /&gt;" Guid="e03f5e23-a139-4e66-85e1-c99991612d15" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                          <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Price'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Description'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='Reviews'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h4' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h4' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="470,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7bfa7465-a9cf-4a8a-baba-4c2aeca5aecd" Version="V5">
+                            <uix:NExtractData.Target>
+                              <uix:TargetAnchorable BrowserURL="https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops" DesignTimeRectangle="471, 510, 990, 12285" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='row' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" Guid="b12427fa-f82a-4cb6-a9ba-0ff73a9b6b60" InformativeScreenshot="6b6fba9449351a098a1b8d01fdd41c2a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Allinone | Web Scraper Test Sites' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" />
+                            </uix:NExtractData.Target>
+                          </uix:NExtractData>
+                          <Assign sap:VirtualizedContainerService.HintSize="486,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[dum]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[ExtractDataTable.Columns.Add("ProductID", GetType(Int32)).ColumnName]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486,348" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                            <ui:ForEachRow.Body>
+                              <ActivityAction x:TypeArguments="sd:DataRow">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("ProductID")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">[(1000 + ExtractDataTable.Rows.IndexOf(CurrentRow) + 1)]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:ForEachRow.Body>
+                          </ui:ForEachRow>
+                          <Assign sap:VirtualizedContainerService.HintSize="486,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="sd:DataTable">[FulldataTable]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="sd:DataTable">[ExtractDataTable.Copy()]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,275" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:OutputDataTable DataTable="[FulldataTable]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="416,104" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[ExtractedOutputdata]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,280" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,169" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[ExtractedOutputdata]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <ui:WriteRange WorkbookPathResource="{x:Null}" DataTable="[FulldataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="486,141" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Products" WorkbookPath="Data\inventory.xlsx">
+                            <ui:WriteRange.StartingCell>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:WriteRange.StartingCell>
+                          </ui:WriteRange>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-8, -8, 1616, 876" BrowserType="Edge" ContentHash="3cfsp60wnUa40Vmb_1i7ZA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUHSURBVFhH7VdZaFxVGJ6qRXxQFBQRFSouUUznbpNMpooLPlihWAR9KBWKL/ogigVB0EBQH6rogwsIERQV08rd4jTptGkz99xZss+UVlxq7JImqXU30tSCiNfvO3MSM1lnYt/0g5/k/+45/znn386Z2P9YCZorHtUc8Zzuihc0T7RqXnYFEa1yLOc4YqsyszoYXvBgqjwZJQ4cinQ3PAvD+FuLhGebeg9HqdJ4ZPpiozJXP2DoZ7NrIKLE7aAhFkVrHrHtC5cTjtHc4HazezCiwMb3ylx90Lzgpebcl5HmF27Bqb7VPdGvPq0IjB8xXDFu+rnbmvNHIoZFfaoNVpe4Uk50wzepa764MwGX6m7QoTvBuzjhR7oXfjhXJOeG7ZCOZN83WDS8l3PJNYVfROs7uq+gXhMwaQ/dZ5VKa6lbXv4aa185ShZH6dKTOOGE9Eq1TPDUqdIE8+CANATclMlcbO0rRUhIX1HLA0YSTDzNyT6mKLq0iFNGVmaYxp9U9ALoTvaZ5sKRyPoke6OiJFART8iN2UJX1NLAApO6E55SKt2/KVWeiLgxzc/tSPSUo5Tdf4n6PAtyif0H6aF2RVUBOfQjvh1T6uLQ3dw2LobTNimKG/oTMqJU6tOQMRjrYWJKccT+CifOxNraLuA4ww23VM3zgjs2HDyFg2S3KKoaTLxEL+tdZBSFShCtLYPHUYK5GxTFDfyk4jyKxQtS3PBryTniOzUsZnqiZcOh0+SeVVTMcMKskS5GM5usgmkHFo03pnuvps6sZfbOdanmBG+xJ2DcFCRQNGIvPTBt7RnCt9xriuZmP2jKfhY1pIuXUmcyJ/tGGc5X5IDlABd6NHiPEBdR1zvFumT/UZRm8DgWubll6ERkeNm76Fr+H08XGwwvfIqV0rir53rOqVRAGZsKdlIn0Np3MFEbd1YOuijiXtZkLRueeFhRiGE4hBP9oFScLuyAsXPgfkcYbEXz1FM4YV6pMd3PbeWp475oVBTnsq13ScWwg7uhZCpuDPvwfxFyhrHCAr3U8bdUOYk4isVCNWbY2luKZI0j2SRX+XZ8Lse4m7v7oIe/yTEIHfsFq8lwgvtYo5taBo5xwq8QoQatvAFkP/uCtXeE4wYUV/8GCHzswYcpqQC1hSB4h80JHMo2eF/R9YeA0OzstUweJNiLimKyuIsmIboas7ll8AT7/UOmLTbKJESpGm7w9KqTUPfFG7yADDt/ldQ7xeVN4nO6brYMcbK3zXQfXX4aJxhTNI1+RReb3QPc4OuKpjcWliHvEyd8VQ6YC6u9fW3l/v6nEeHme76qEeGup4vlXdGZb5YcYPgFLTUyzrm/KAqLo1SHx6oaETbau2QjImAArXhyfiv+AzLbUmHkHBNLqbPAqdIY95dSGefDHKvUlVvxDGCk6jIyOsMHuKm4lzfxPtjOsMyEaS6SH2cuk083T7QZdpjinYKcul99ru0yIhDnhdex7PciMnf3ywUUvQBYcDtL0/DzDMdsq67rOiaw08qDpL3yINF3iXV8njHbYZiPkSUfJCxfuQnlpbofJMT8Jxmh+8FmPsdwR7wnn19LPMlwg+7irTqTpOSa+STrLtT+JCMMR7ycRIeMe+I6RdUMbLIMj4ytd8Wtq3qUKqzByRjzfjYj2ZAWeYbPF5Yqu96/fpYTcPnm1MjJyPi0wNjXI9Pn5YcJAWPbGA66cfGfYvPlPP40+w8gFvsbDJCUyojac8YAAAAASUVORK5CYII=" InformativeScreenshot="6a0f9ce228b621581aca5c4a5842b2f2.jpg" Reference="vsGK_J15Wke1ii7y-mRSiw/QLdYgdQZF0yLk6IGpRWOQw" Selector="&lt;html app='msedge.exe' title='Allinone | Web Scraper Test Sites' /&gt;" Url="[in_config(&quot;BaseUrl&quot;).ToString]" Version="V2" />
+                    </uix:NApplicationCard.TargetApp>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="588,218" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="Logs/mylog.txt" sap:VirtualizedContainerService.HintSize="554,158" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;Exception: &quot; + exception.Message + Environment.NewLine + &#xA;&quot;Source: &quot; + exception.Source + Environment.NewLine + &#xA;&quot;StackTrace: &quot; + exception.StackTrace]" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="588,90" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </TryCatch.Finally>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+  </Sequence>
+</Activity>
